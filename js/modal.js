@@ -1,6 +1,6 @@
-(function () {
+"use strict"
 
-  // Маска
+// Маска
 
   const modalPhone = document.querySelector(".modal__phone");
   const maxPhoneNumber = 16;
@@ -158,4 +158,4 @@
       modalNameInput.focus();
     }
   };
-})();
+
