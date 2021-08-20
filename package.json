@@ -1,0 +1,35 @@
+{
+  "name": "Testing",
+  "version": "19.0.0",
+  "private": true,
+  "description": "Личный проект",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Daiver500/webpack.git"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "eslint": "7.1.0",
+    "eslint-config-htmlacademy": "0.6.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^6.0.0",
+    "sass-loader": "^11.1.1",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.1.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "css": "^3.0.0",
+    "loader": "^2.1.1",
+    "style": "0.0.3"
+  },
+  "scripts": {
+    "test": "eslint js/",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  },
+  "engines": {
+    "node": "8.11"
+  }
+}

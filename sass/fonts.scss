@@ -1,0 +1,23 @@
+/* pt-mono - latin_cyrillic */
+@font-face {
+  font-family: "PTMono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("PTMono"),
+    url("../fonts/pt-mono.woff2") format("woff2"), /* Super Modern Browsers */
+    url("../fonts/pt-mono.woff") format("woff"), /* Modern Browsers */
+}
+
+/* roboto - condensed - latin_cyrillic */
+@font-face {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Roboto Condensed"),
+    url("../fonts/roboto-condensed.woff2") format("woff2"), /* Super Modern Browsers */
+    url("../fonts/roboto-condensed.woff") format("woff"), /* Modern Browsers */
+}
