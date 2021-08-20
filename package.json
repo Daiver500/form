@@ -1,11 +1,11 @@
 {
-  "name": "Form__sber",
+  "name": "form__sber",
   "version": "19.0.0",
   "private": true,
   "description": "Проект формы",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Daiver500/form__sber.git"
+    "url": "git+ssh://git@github.com/Daiver500/form__sber.git"
   },
   "devDependencies": {
     "css-loader": "^5.2.4",
@@ -13,6 +13,7 @@
     "eslint-config-htmlacademy": "0.6.0",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.0",
+    "node.js": "0.0.1-security",
     "sass-loader": "^11.1.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
@@ -30,6 +31,12 @@
     "start": "webpack-dev-server --mode development"
   },
   "engines": {
-    "node": "8.11"
-  }
+    "node": "14.17.5"
+  },
+  "bugs": {
+    "url": "https://github.com/Daiver500/form__sber/issues"
+  },
+  "homepage": "https://github.com/Daiver500/form__sber#readme",
+  "main": "bundle.js",
+  "author": ""
 }
