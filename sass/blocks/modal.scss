@@ -1,8 +1,6 @@
 .modal__inner,
 .modal-success__inner {
   display: flex;
-  width: 490px;
-  min-height: 605px;
   position: relative;
   top: calc(50% - 295px);
   right: 0;
@@ -12,7 +10,15 @@
   text-align: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   z-index: 2;
-  background-color: $blue;
+  background-color: $white;
+}
+
+.modal__inner {
+  max-width: 460px;
+}
+
+.modal-success__inner {
+  max-width: 580px;
 }
 
 .modal,
@@ -27,6 +33,7 @@
   bottom: 0;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.8);
+  min-height: 100vh;
 }
 
 .modal__data {
@@ -34,134 +41,103 @@
   flex-direction: column;
   max-width: 490px;
   padding: 33px 40px 36px;
+  position: relative;
 }
 
 .modal__header,
 .modal__text {
   margin-top: 0;
-  color: $white;
+  color: $black;
   text-align: left;
 }
 
 .modal__header {
   margin-bottom: 20px;
-  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-family: "PTMono", "Arial", sans-serif;
   font-size: 28px;
   line-height: 39px;
-  color: $white;
+  color: $black;
 }
 
 .modal__text {
-  margin-bottom: 51px;
   font-size: 16px;
   line-height: 22px;
-  max-width: 380px;
+  max-width: 460px;
+  color: $black;
 }
 
-.modal__form input,
-.modal__form textarea {
+.modal__form input {
   padding: 16px;
+  padding-left: 5px;
   margin-bottom: 30px;
   min-width: 380px;
-  background-color: $light-blue;
+  background-color: $white;
   border: 0;
-  color: $white;
+  color: $green;
 }
 
-.modal__form textarea {
-  resize: none;
-}
-
-.modal__form input::placeholder,
-.modal__form textarea::placeholder {
-  color: $white;
+.modal__form input::placeholder {
   font-size: 16px;
   line-height: 21px;
 }
 
-.modal__form button {
-  font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: 700;
+.modal__button {
+  font-family: "PTMono", "Arial", sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   color: $white;
   text-transform: uppercase;
-  background-color: inherit;
-  border: 1px solid $white;
-  border-radius: 10px;
+  background-color: $black;
+  border: 1px solid $black;
   padding: 14px 45px;
   cursor: pointer;
   margin-bottom: 34px;
 }
 
-.modal__form button:hover,
-.modal__form button:focus {
+.modal__button:hover,
+.modal__button:focus {
   background-color: $white;
-  color: $blue;
+  color: $black;
+  border: 1px solid $black;
+}
+
+.modal__button:disabled {
+  opacity: 0.5;
 }
 
 .modal-success__title {
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  max-width: 380px;
+  max-width: 860px;
+  flex-direction: column;
+  padding: 25px;
 }
 
 .modal-success__text {
-  color: $white;
+  color: $black;
   font-size: 24px;
   line-height: 31px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modal-success__image {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
 }
 
 .modal__close,
 .modal-success__close {
   position: absolute;
   top: 20px;
-  right: 20px;
-  width: 26px;
-  height: 28px;
+  right: 37px;
+  width: 30px;
+  height: 25px;
   border: none;
   background-color: inherit;
   cursor: pointer;
-}
-
-.modal__checkbox-label {
-  max-width: 380px;
-  display: flex;
-  position: relative;
-  min-height: 16px;
-  cursor: pointer;
-  color: $white;
-  font-size: 14px;
-  line-height: 16px;
-  padding-left: 30px;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.modal__checkbox {
-  position: absolute;
-  appearance: none;
-  display: none;
-}
-
-.modal__checkbox-text {
-  position: absolute;
-  width: 18px;
-  height: 16px;
-  left: 0;
-  background-image: url("../img/checkbox.svg");
-  background-repeat: no-repeat;
-}
-
-.modal__checkbox:checked + .modal__checkbox-text {
-  background-image: url("../img/checkbox-checked.svg");
-  background-repeat: no-repeat;
-}
-
-.modal__lowerpart {
-  display: flex;
-  flex-direction: column-reverse;
 }
 
 .hidden {
@@ -169,40 +145,100 @@
 }
 
 .modal input:hover,
-.modal textarea:hover,
-.modal input:focus,
-.modal textarea:focus {
-  border: 1px solid $black;
+.modal input:focus {
+  opacity: 0.5;
+}
+
+.modal__label {
+  position: relative;
+}
+
+.modal__label::after {
+  content: "";
+  position: absolute;
+  bottom: 28px;
+  left: 5px;
+  right: 0;
+  max-width: 364px;
+  border-bottom: 1px solid $grey;
 }
 
 @media (max-width: $max-tablet-width) {
-  /*.modal,
-  .modal__inner,
-  .modal-success,
-  .modal-sucess__inner {
-    display: none;
-  }*/
-
   .modal__inner,
   .modal-success__inner {
-    width: 100%;
     justify-content: center;
+    max-width: 520px;
   }
 
   .modal__data {
-    width: 300px;
-    padding: 10px;
+    padding: 30px;
+    max-width: 520px;
   }
 
   .modal__text {
-    margin-bottom: 51px;
     font-size: 16px;
     line-height: 22px;
-    max-width: 320px;
   }
 
-  .modal__form input,
-  .modal__form textarea {
-    min-width: 280px;
+  .modal__form input {
+    min-width: 440px;
+  }
+
+  .modal__close {
+    right: 21px;
+    top: 41px;
+  }
+
+  .modal__label::after {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: $max-mobile-width) {
+  .modal__inner,
+  .modal-success__inner,
+  .modal__data,
+  .modal__label::after,
+  .modal__text {
+    max-width: 100%;
+  }
+
+  .modal__form {
+    width: 100%;
+  }
+
+  .modal__data {
+    padding: 10px;
+  }
+
+  .modal__form input {
+    min-width: 100%;
+  }
+
+  .modal__close {
+    top: 21px;
+  }
+}
+
+.modal__show {
+  animation-name: bounce;
+  animation-duration: 0.6s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
