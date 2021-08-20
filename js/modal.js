@@ -27,8 +27,7 @@
 
   const openModalButton = document.querySelector(".main__button");
   const closeModalButton = document.querySelector(".modal__close");
-  const closemodalSuccessButton = document.querySelector(".modal-success__close");
-  const formButton = document.querySelector(".modal__button");
+  const closeModalSuccessButton = document.querySelector(".modal-success__close");
   const modalNameInput = document.querySelector(".modal__name");
   const modalPhoneInput = document.querySelector(".modal__phone");
   const modalMain = document.querySelector(".modal");
@@ -64,7 +63,6 @@
     closeModalButton.addEventListener("click", closeModalButton);
     modalMain.addEventListener("click", windowClickHandler);
     document.addEventListener("keydown", modalEscPressHandler);
-    modalForm.addEventListener("submit", formSendingHandler);
   };
 
   const closeModal = () => {
@@ -73,35 +71,15 @@
     closeModalButton.removeEventListener("click", openModalButton);
     modalMain.removeEventListener("click", windowClickHandler);
     document.removeEventListener("keydown", modalEscPressHandler);
-    modalForm.removeEventListener("submit", formSendingHandler);
   };
-
 
   if (openModalButton) {
     openModalButton.addEventListener("click", openModal);
   }
 
-
   if (closeModalButton) {
-  closeModalButton.addEventListener("click", closeModal);
+    closeModalButton.addEventListener("click", closeModal);
   }
-
-  const formSendingHandler = (evt) => {
-    modalPhoneInput.value = "";
-    modalNameInput.value = "";
-    openSuccessModal();
-    evt.preventDefault();
-  };
-
-  modalForm.addEventListener("submit", function (evt) {
-    modalSuccess.classList.remove("hidden");
-    evt.preventDefault();
-    localStorageSet();
-    closemodalSuccessButton.addEventListener("click", closemodalSuccessButton);
-    document.addEventListener("keydown", modalSuccessEscPressHandler);
-    document.addEventListener("click", windowSuccessClickHandler);
-   });
-
 
   const modalSuccessEscPressHandler = (evt) => {
     if (evt.key === `Escape`) {
@@ -120,19 +98,32 @@
   const openSuccessModal = () => {
     modalMain.classList.add("hidden");
     modalSuccess.classList.remove("hidden");
-    modalSuccessInner.classList.add("modal__show");
-    modalSuccess.addEventListener("click", windowSuccessClickHandler);
-    closemodalSuccessButton.addEventListener("click", closeSuccessModal);
+    modalSuccessInner.classList.add("modal__animation");
+    closeModalSuccessButton.addEventListener("click", closeSuccessModal);
+    document.addEventListener("click", windowSuccessClickHandler);
     document.addEventListener("keydown", modalSuccessEscPressHandler);
   };
 
   const closeSuccessModal = () => {
     modalSuccess.classList.add("hidden");
-    modalSuccessInner.classList.remove("modal__show");
-    closemodalSuccessButton.removeEventListener("click", closeSuccessModal);
-    modalSuccess.removeEventListener("click", windowSuccessClickHandler);
+    modalSuccessInner.classList.remove("modal__animation");
+    closeModalSuccessButton.removeEventListener("click", closeSuccessModal);
+    document.removeEventListener("click", windowSuccessClickHandler);
     document.removeEventListener("keydown", modalSuccessEscPressHandler);
   };
+
+  modalForm.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    localStorageSet();
+    modalPhoneInput.value = "";
+    modalNameInput.value = "";
+    openSuccessModal();
+  });
+
+
+  if (closeModalSuccessButton) {
+    closeModalSuccessButton.addEventListener("click", closeSuccessModal);
+  }
 
   // Local storage
 
