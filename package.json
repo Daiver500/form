@@ -31,7 +31,7 @@
     "start": "webpack-dev-server --mode development"
   },
   "engines": {
-    "node": "8.11"
+    "node": "14.17.5"
   },
   "bugs": {
     "url": "https://github.com/Daiver500/form__sber/issues"
