@@ -12,7 +12,7 @@
     "eslint": "7.1.0",
     "eslint-config-htmlacademy": "0.6.0",
     "mini-css-extract-plugin": "^1.6.0",
-    "node-sass": "^6.0.0",
+    "node-sass": "^6.0.1",
     "node.js": "0.0.1-security",
     "sass-loader": "^11.1.1",
     "webpack": "^5.51.1",
@@ -31,7 +31,7 @@
     "start": "webpack-dev-server --mode development"
   },
   "engines": {
-    "node": "14.17.5"
+    "node": "8.11"
   },
   "bugs": {
     "url": "https://github.com/Daiver500/form__sber/issues"
