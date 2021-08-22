@@ -17,7 +17,7 @@
       <button class="main__button" type="button">Заказать звонок</button>
     </div>
   </section>
-  <section  class="modal">
+  <section class="modal">
     <div class="modal__inner">
       <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
         <div class="modal__data">
@@ -30,22 +30,26 @@
           </button>
           <h2 class="modal__header">Закажите звонок</h2>
           <label class="modal__label"> <span class="visually-hidden">Имя</span>
-            <input class="modal__name" pattern="^[Яа-яЁё\s]+$" type="text" name="text" placeholder="Имя*" required="">
+            <input class="modal__name" pattern="^[Яа-яЁё\s]+$" type="text" name="text" placeholder="Имя*" required
+              oninvalid="setCustomValidity('Введите имя на кириллице')" oninput="setCustomValidity('')">
           </label>
           <label class="modal__label"> <span class="visually-hidden">Телефон</span>
-            <input class="modal__phone" type="text" name="telephone" id="phone" placeholder="Номер телефона*" required />
+            <input class="modal__phone" type="text" name="telephone" id="phone" placeholder="Номер телефона*" required
+              oninvalid="setCustomValidity('Введите 10 цифр')" oninput="setCustomValidity('')" />
           </label>
-        </label>
-        <label class="modal__label"> <span class="visually-hidden">Электронная почта</span>
-          <input class="modal__mail" type="mail" name="email" id="email" placeholder="Электронная почта" />
-        </label>
+          </label>
+          <label class="modal__label"> <span class="visually-hidden">Электронная почта</span>
+            <input class="modal__mail" type="mail" name="email" id="email" placeholder="Электронная почта" />
+          </label>
           <button class="modal__button" type="submit">Начать работу</button>
           <div class="modal__information">
-            <p class="modal__text">Нажимая кнопку "Отправить", я даю условие на обработку персональных данных.<a target="__blank" class="modal__link" href="../form__sber/test.docx" download="">Условия использования данных.</a></p>
-          </div>
+            <p class="modal__text">Нажимая кнопку "Отправить", я даю условие на обработку персональных данных.<a
+                target="__blank" class="modal__link" href="../form__sber/test.docx" download="">Условия использования
+                данных.</a></p>
           </div>
         </div>
-      </form>
+    </div>
+    </form>
 
     </div>
   </section>
