@@ -60,7 +60,7 @@
     modalMain.classList.remove("hidden");
     document.body.style.overflow = "hidden";
     inputFocus();
-    closeModalButton.addEventListener("click", closeModalButton);
+    closeModalButton.addEventListener("click", closeModal);
     modalMain.addEventListener("click", windowClickHandler);
     document.addEventListener("keydown", modalEscPressHandler);
   };
@@ -68,7 +68,7 @@
   const closeModal = () => {
     modalMain.classList.add("hidden");
     document.body.style.overflow = "";
-    closeModalButton.removeEventListener("click", openModalButton);
+    closeModalButton.removeEventListener("click", openModal);
     modalMain.removeEventListener("click", windowClickHandler);
     document.removeEventListener("keydown", modalEscPressHandler);
   };
