@@ -2,7 +2,6 @@ const path = require("path");
 const miniCss = require("mini-css-extract-plugin");
 
 module.exports = {
-
   entry: [
     "./js/index.js",
     "./js/modal.js",
@@ -10,7 +9,7 @@ module.exports = {
   watch: true,
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname),
     iife: true
   },
    module: {
