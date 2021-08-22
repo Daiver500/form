@@ -7,6 +7,7 @@ module.exports = {
     "./js/index.js",
     "./js/modal.js",
   ],
+  watch: true,
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "public"),
