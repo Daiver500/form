@@ -27,8 +27,8 @@
   },
   "scripts": {
     "test": "eslint js/",
-    "build": "webpack --mode production",
-    "start": "webpack --mode development"
+    "start": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "engines": {
     "node": "14.17.5"
